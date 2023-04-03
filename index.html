@@ -13,12 +13,12 @@
     <div class="flex-container">
         <div class="title"><h1>Etch-a-Sketch</h1></div>
         <div class="content">
-            <div class="board"></div> <!--16x16 grid will be added with JS later-->
+            <div class="board" draggable="false"></div> <!--16x16 grid will be added with JS later-->
             <div class="buttons">
                 <button>Black</button>
                 <button>White</button>
                 <button>Random</button>
-                <button>Reset</button>
+                <button onclick = "reset()">Reset</button>
             </div>
             <div>
                 <input type="text" placeholder="Size of board" value="16" onchange="changeSize(this.value)"/> <!--Makes the default size of the sketch board 16x16, and calls the changeSize function in main.js to allow a custom grid size-->

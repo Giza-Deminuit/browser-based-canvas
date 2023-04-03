@@ -1,9 +1,39 @@
+// Supports line 29
+var mouseDown = 0;
+document.body.onmousedown = ()=>
+{ 
+  ++mouseDown;
+}
+document.body.onmouseup = ()=>
+{
+  --mouseDown;
+}
+
+let board = document.querySelector('.board');
+
+// *************************************************
+//         Implements drawing on click
+// *************************************************
+function draw(square)
+{
+    square.addEventListener("mouseover", ()=> 
+    {
+        if (mouseDown)
+        {
+            square.style.backgroundColor = "black";
+        }
+        else{
+            square.style.backgroundColor = square.style.backgroundColor;
+        }
+    });
+}
+
+
 // *************************************************
 //         Populates the sketch board
 // *************************************************
 function populateBoard(size)
 {
-    let board = document.querySelector('.board');
     let squares = board.querySelectorAll('div');
 
     squares.forEach((div)=> div.remove()); // Clears any existing squares
@@ -15,7 +45,11 @@ function populateBoard(size)
     for (let i = 0; i<amount; i++)
     {
         let square = document.createElement('div');
+
+        draw(square);
+
         square.style.backgroundColor = 'blue';
+        square.ondragstart = () => { return false; } // prevents dragging the squares
         board.insertAdjacentElement("beforeend", square);
     }
 }
@@ -34,4 +68,10 @@ function changeSize(input)
     else
         console.log("invalid size");
     
+}
+
+function reset()
+{
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div)=> div.style.backgroundColor = "blue")
 }
