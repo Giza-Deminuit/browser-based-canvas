@@ -11,6 +11,8 @@ document.body.onmouseup = ()=>
 
 let board = document.querySelector('.board');
 
+let paintColor = 'black';
+
 // *************************************************
 //         Implements drawing on click
 // *************************************************
@@ -20,12 +22,26 @@ function draw(square)
     {
         if (mouseDown)
         {
-            square.style.backgroundColor = "black";
+            square.style.backgroundColor = paintColor;
         }
         else{
             square.style.backgroundColor = square.style.backgroundColor;
         }
     });
+}
+
+// *************************************************
+//         Lets user change paint color
+// *************************************************
+function setBrushColor(color)
+{
+    if (color != 0)
+        paintColor = color;
+    else
+    {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        paintColor = "#" + randomColor;
+    }
 }
 
 
@@ -48,7 +64,7 @@ function populateBoard(size)
 
         draw(square);
 
-        square.style.backgroundColor = 'blue';
+        square.style.backgroundColor = 'white';
         square.ondragstart = () => { return false; } // prevents dragging the squares
         board.insertAdjacentElement("beforeend", square);
     }
@@ -76,5 +92,5 @@ function changeSize(input)
 function reset()
 {
     let squares = board.querySelectorAll('div');
-    squares.forEach((div)=> div.style.backgroundColor = "blue")
+    squares.forEach((div)=> div.style.backgroundColor = 'white')
 }

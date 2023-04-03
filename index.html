@@ -11,13 +11,14 @@
 </head>
 <body>
     <div class="flex-container">
-        <div class="title"><h1>Etch-a-Sketch</h1></div>
+        <div class="title"><h1>~ Custom Canvas ~</h1></div>
         <div class="content">
             <div class="board" draggable="false"></div> <!--16x16 grid will be added with JS later-->
             <div class="buttons">
-                <button>Black</button>
-                <button>White</button>
-                <button>Random</button>
+                <button onclick = "setBrushColor('black')">Black</button>
+                <button onclick = "setBrushColor('red')">Red</button>
+                <button onclick = "setBrushColor(0)">Random</button>
+                <button onclick = "setBrushColor('white')">Eraser</button>
                 <button onclick = "reset()">Reset</button>
             </div>
             <div class="set-size">
