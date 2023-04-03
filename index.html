@@ -7,8 +7,26 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>Etch-a-Sketch</title>
+    <link rel="shortcut icon" href="#"> <!--fixes the "GET http://127.0.0.1:5500/favicon.ico" error in inspector-->
 </head>
 <body>
-    
+    <div class="flex-container">
+        <div class="title"><h1>~ Custom Canvas ~</h1></div>
+        <div class="content">
+            <div class="board" draggable="false"></div> <!--16x16 grid will be added with JS later-->
+            <div class="buttons">
+                <button onclick = "setBrushColor('black')">Black</button>
+                <button onclick = "setBrushColor('red')">Red</button>
+                <button onclick = "setBrushColor(0)">Random</button>
+                <button onclick = "setBrushColor('white')">Eraser</button>
+                <button onclick = "reset()">Reset</button>
+            </div>
+            <div class="set-size">
+                <input type="text" placeholder="Size of board" value="16" onchange="changeSize(this.value)"/> <!--Makes the default size of the sketch board 16x16, and calls the changeSize function in main.js to allow a custom grid size-->
+                <button>Set Size</button>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="main.js"></script>
 </html>
