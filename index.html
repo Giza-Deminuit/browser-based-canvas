@@ -7,8 +7,25 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>Etch-a-Sketch</title>
+    <link rel="shortcut icon" href="#"> <!--fixes the "GET http://127.0.0.1:5500/favicon.ico" error in inspector-->
 </head>
 <body>
-    
+    <div class="flex-container">
+        <div class="title"><h1>Etch-a-Sketch</h1></div>
+        <div class="content">
+            <div class="board"></div> <!--16x16 grid will be added with JS later-->
+            <div class="buttons">
+                <button>Black</button>
+                <button>White</button>
+                <button>Random</button>
+                <button>Reset</button>
+            </div>
+            <div>
+                <input type="text" placeholder="Size of board" value="16"/>
+                <button>Set Size</button>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="main.js"></script>
 </html>
