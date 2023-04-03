@@ -21,7 +21,7 @@
                 <button>Reset</button>
             </div>
             <div>
-                <input type="text" placeholder="Size of board" value="16"/>
+                <input type="text" placeholder="Size of board" value="16" onchange="changeSize(this.value)"/> <!--Makes the default size of the sketch board 16x16, and calls the changeSize function in main.js to allow a custom grid size-->
                 <button>Set Size</button>
             </div>
         </div>
