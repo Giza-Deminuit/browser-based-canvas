@@ -70,6 +70,9 @@ function changeSize(input)
     
 }
 
+// *************************************************
+//                  Resets the board
+// *************************************************
 function reset()
 {
     let squares = board.querySelectorAll('div');
